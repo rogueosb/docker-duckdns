@@ -1,6 +1,9 @@
 FROM phusion/baseimage:0.9.21
 
-MAINTAINER David Coppit <david@coppit.org>
+MAINTAINER rogueosb <rogueosb@gmail.com>
+
+RUN apt-get -qq update && \
+apt-get -qq install -y iproute2
 
 VOLUME ["/config"]
 
