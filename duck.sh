@@ -67,7 +67,7 @@ do
   if [ "$IPV6" = "yes" ]; then
     #ip6=`ifconfig | grep inet6 | grep -i global | awk -F " " '{print $3}' | awk -F "/" '{print $1}'`
     ip6=`ip -6 addr | grep inet6 | awk -F '[ \t]+|/' '{print $3}' | grep -v ^::1 | grep -v ^fe80 | head -n 1`
-    ip4=`curl ipinfo.io/ip`
+    ip4=`curl -S -s ipinfo.io/ip`
     echo "IPv4 address is ${ip4}"
     echo "IPv6 address is ${ip6}"
   else
